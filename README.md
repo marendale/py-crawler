@@ -71,4 +71,4 @@ Enter a url into the input form and click the `start crawl` button. You should t
 
 ## Project
 
-Project Link: [https://github.com/your_username/your_project](https://github.com/your_username/your_project)
+Project Link: [https://github.com/marendale/team-12-csc-4320](https://github.com/marendale/team-12-csc-4320)
