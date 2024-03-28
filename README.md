@@ -40,7 +40,7 @@ pip install requests beautifulsoup4 Flask Flask-SQLAlchemy flask-cors
 python main.py
 ```
 
-The Flask server should now be running and accessible.
+The Flask server should now be running and accessible via `http://127.0.0.1:5000/`.
 
 ### Set up the frontend
 
@@ -63,16 +63,11 @@ npm install
 npm run dev
 ```
 
-The React application should now be running and accessible via `http://localhost:3000` (or another port if 3000 is busy).
+The React application should now be running and accessible via `http://localhost:5173` (or another port if 5173 is busy).
 
 ## Usage
 
 Enter a url into the input form and click the `start crawl` button. You should then see the crawler begin to populate the table. If you want to stop, click the `pause crawl` button. You will then be given the option to `resume crawl` or `end crawl`, end crawl will discard all information, resume crawl will continue populating the table from where it was stopped.
-
-
-## License
-
-Distribute under the MIT license. See `LICENSE` for more information.
 
 ## Project
 
