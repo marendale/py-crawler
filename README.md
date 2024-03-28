@@ -1,6 +1,6 @@
-# Project Title
+# Team 12 CSC 4320
 
-A brief description of what this project does and who it's for.
+Multi-threaded web crawler.
 
 ## Prerequisites
 
@@ -15,8 +15,8 @@ Follow these steps to get your local development environment up and running:
 ### Clone the repository
 
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone https://github.com/marendale/team-12-csc-4320.git
+cd team-12-csc-4320
 ```
 
 ### Set up the backend
@@ -67,20 +67,13 @@ The React application should now be running and accessible via `http://localhost
 
 ## Usage
 
-Provide instructions on how to use the application, including any relevant URLs for accessing the app and API endpoints.
+Enter a url into the input form and click the `start crawl` button. You should then see the crawler begin to populate the table. If you want to stop, click the `pause crawl` button. You will then be given the option to `resume crawl` or `end crawl`, end crawl will discard all information, resume crawl will continue populating the table from where it was stopped.
 
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-Please refer to the CONTRIBUTING.md for more information.
 
 ## License
 
-Distribute under the XYZ license. See `LICENSE` for more information.
+Distribute under the MIT license. See `LICENSE` for more information.
 
-## Contact
-
-Your Name - [@YourTwitter](https://twitter.com/YourTwitter)
+## Project
 
 Project Link: [https://github.com/your_username/your_project](https://github.com/your_username/your_project)
