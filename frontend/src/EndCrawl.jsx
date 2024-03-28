@@ -17,7 +17,7 @@ const EndCrawl = ({endCallback}) => {
     }
 
     return (
-        <button onClick={onEndCrawl}>End Crawl</button>
+        <button className={"control"} onClick={onEndCrawl}>End Crawl</button>
     )
 }
 

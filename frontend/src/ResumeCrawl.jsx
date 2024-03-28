@@ -12,7 +12,7 @@ const ResumeCrawl = ({resumeCallback}) => {
         }
     }
     return (
-        <button onClick={onResumeCrawl}>Resume Crawl</button>
+        <button className={"control"} onClick={onResumeCrawl}>Resume Crawl</button>
     )
 }
 

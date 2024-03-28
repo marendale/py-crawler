@@ -38,7 +38,7 @@ const StartCrawl = ({startCallback}) => {
                     onChange={(e) => setUrl(e.target.value)} 
                 />
             </div>
-            <button type="submit">Start Crawl</button>
+            <button className={"control"} type="submit">Start Crawl</button>
         </form>
     )
 }

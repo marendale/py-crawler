@@ -12,7 +12,7 @@ const PauseCrawl = ({pauseCallback}) => {
         }
     }
     return (
-        <button onClick={onPauseCrawl}>Pause Crawl</button>
+        <button className={"control"} onClick={onPauseCrawl}>Pause Crawl</button>
     )
 }
 
