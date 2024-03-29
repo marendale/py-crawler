@@ -4,56 +4,74 @@
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
-}
-
-/* Form styling */
-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Form styling */
+  form {
     margin-bottom: 20px;
-}
-
-input[type="text"] {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between form elements */
+  }
+  
+  input[type="text"] {
     padding: 10px;
-    margin-right: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-button.control {
+  }
+  
+  button.control {
     padding: 10px 15px;
-    background-color: #0056b3;
+    background-color: #257edc;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-}
-
-    button.control:hover {
+  }
+  
+  button.control:hover {
     background-color: #004494;
-}
-
-/* Table styling */
-table {
+  }
+  
+  /* Div containing the table */
+  #root > div:last-child {
     width: 100%;
+    overflow-x: none; 
+  }
+  
+  /* Table styling */
+  table {
+    width: 100%;
+    max-width: 100%; /* Ensures table does not exceed the div width */
     border-collapse: collapse;
     margin-top: 20px;
-}
-
-th, td {
+  }
+  
+  th, td {
+    width: 50%;
+    max-width: 50%;
     text-align: left;
     padding: 12px;
     border: 1px solid #ddd;
-}
-
-th {
+    white-space: wrap; 
+  }
+  
+  th {
     background-color: #007bff;
     color: white;
-}
-
-tbody tr:nth-child(odd) {
+  }
+  
+  tbody tr:nth-child(odd) {
     background-color: #f2f2f2;
-}
-
-/* Headings */
-h2 {
+  }
+  
+  /* Headings */
+  h2 {
     color: #333;
-}
+    text-align: center; /* Centers the h2 element horizontally */
+  }
+  

@@ -1,13 +1,18 @@
 import { useState, useRef } from 'react'
 import './App.css'
-import WebsiteList from './WebsiteList'
+import CrawlStats from './CrawlStats'
 import StartCrawl from './StartCrawl'
 import PauseCrawl from './PauseCrawl'
 import ResumeCrawl from './ResumeCrawl'
 import EndCrawl from './EndCrawl'
+import CrawlContent from './CrawlContent'
 
 function App() {
   const [websites, setWebsites] = useState([])
+  const [images, setImages] = useState([])
+  const [depth, setDepth] = useState("")
+  const [urls, setUrls] = useState("")
+  const [workers, setWorkers] = useState("")
   const [startOption, setStartOption] = useState(true)
   const [resumeOption, setResumeOption] = useState(false)
   const [pauseOption, setPauseOption] = useState(false)
@@ -15,13 +20,24 @@ function App() {
   const crawlInterval = useRef();
   
   const fetchWebsites = async () => {
-    const response = await fetch("http://127.0.0.1:5000/websites")
+    const webresponse = await fetch("http://127.0.0.1:5000/websites")
+    const webdata = await webresponse.json()
+    setWebsites(webdata.websites)
+    const imgresponse = await fetch("http://127.0.0.1:5000/images")
+    const imgdata = await imgresponse.json()
+    setImages(imgdata.images)
+  }
+
+  const fetchStats = async () => {
+    const response = await fetch("http://127.0.0.1:5000/crawl_stats")
     const data = await response.json()
-    setWebsites(data.websites)
+    setDepth(data.depth)
+    setUrls(data.urls)
+    setWorkers(data.workers)
   }
 
   const startInterval = () => {
-    crawlInterval.current = setInterval(() => fetchWebsites(), 1000)
+    crawlInterval.current = setInterval(() => { fetchWebsites(), fetchStats() }, 1000)
   } 
 
   const pauseInterval = () => {
@@ -32,6 +48,7 @@ function App() {
     setPauseOption(true)
     setStartOption(false)
     fetchWebsites()
+    fetchStats()
     startInterval()
   }
 
@@ -46,6 +63,8 @@ function App() {
     setPauseOption(true)
     setEndOption(false)
     setResumeOption(false)
+    fetchWebsites()
+    fetchStats()
     startInterval()
   }
 
@@ -59,15 +78,19 @@ function App() {
 
   return (
     <>
-    {startOption && <StartCrawl startCallback={onStart} />}
+    <h1>Multi-Threaded Web Crawler</h1>
+    <div className='controls'>
+      {startOption && <StartCrawl startCallback={onStart} />}
 
-    {pauseOption && <PauseCrawl pauseCallback={onPause} />}
+      {pauseOption && <CrawlStats depth={depth} urls={urls} workers={workers}/>}
 
-    {resumeOption && <ResumeCrawl resumeCallback={onResume} />}
+      {pauseOption && <PauseCrawl pauseCallback={onPause} />}
 
-    {endOption && <EndCrawl endCallback={onEnd} />}
+      {resumeOption && <ResumeCrawl resumeCallback={onResume} />}
 
-    <WebsiteList websites={websites} />
+      {endOption && <EndCrawl endCallback={onEnd} />}
+    </div>
+    <CrawlContent websites={websites} images={images}/>
     </>
   )
 }

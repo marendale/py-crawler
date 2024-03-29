@@ -3,7 +3,7 @@ import React from 'react'
 const WebsiteList = ({websites}) => {
     return(
     <div>
-        <h2>Websites</h2>
+        <h3>Websites</h3>
         <table>
             <thead>
                 <tr>

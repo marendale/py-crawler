@@ -12,3 +12,13 @@ class Website(db.Model):
             "name": self.name, 
             "url": self.url,
         }
+
+class Image(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    url = db.Column(db.String(400), unique=True, nullable=False)
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "url": self.url,
+        }

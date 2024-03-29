@@ -30,7 +30,7 @@ const StartCrawl = ({startCallback}) => {
     return(
         <form onSubmit={onStartCrawl}>
             <div>
-                <label htmlFor="url">url</label>
+                <label htmlFor="url">url: </label>
                 <input 
                     type="text" 
                     id="url" 
