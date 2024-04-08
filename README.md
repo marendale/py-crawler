@@ -1,4 +1,4 @@
-# Team 12 CSC 4320
+# Py-Crawler
 
 Multi-threaded web crawler.
 
