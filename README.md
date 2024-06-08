@@ -15,7 +15,7 @@ Follow these steps to get your local development environment up and running:
 ### Clone the repository
 
 ```bash
-git clone https://github.com/marendale/team-12-csc-4320.git
+git clone https://github.com/marendale/py=crawler.git
 cd team-12-csc-4320
 ```
 
@@ -71,4 +71,4 @@ Enter a url into the input form and click the `start crawl` button. You should t
 
 ## Project
 
-Project Link: [https://github.com/marendale/team-12-csc-4320](https://github.com/marendale/team-12-csc-4320)
+Project Link: [https://github.com/marendale/py-crawler](https://github.com/marendale/py-crawler)
