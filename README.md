@@ -15,7 +15,7 @@ Follow these steps to get your local development environment up and running:
 ### Clone the repository
 
 ```bash
-git clone https://github.com/marendale/py=crawler.git
+git clone https://github.com/marendale/py-crawler.git
 cd team-12-csc-4320
 ```
 
